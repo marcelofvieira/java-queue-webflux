@@ -1,5 +1,5 @@
 
-package com.yahoo.finance.pubmatic.response;
+package com.example.response;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,9 +15,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "execution-start-time",
     "execution-stop-time",
     "execution-time",
+    "params",
     "content"
 })
-public class Url {
+public class Query_ {
 
     @JsonProperty("execution-start-time")
     private String executionStartTime;
@@ -25,6 +26,8 @@ public class Url {
     private String executionStopTime;
     @JsonProperty("execution-time")
     private String executionTime;
+    @JsonProperty("params")
+    private String params;
     @JsonProperty("content")
     private String content;
     @JsonIgnore
@@ -58,6 +61,16 @@ public class Url {
     @JsonProperty("execution-time")
     public void setExecutionTime(String executionTime) {
         this.executionTime = executionTime;
+    }
+
+    @JsonProperty("params")
+    public String getParams() {
+        return params;
+    }
+
+    @JsonProperty("params")
+    public void setParams(String params) {
+        this.params = params;
     }
 
     @JsonProperty("content")

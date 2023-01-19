@@ -1,7 +1,7 @@
-package com.yahoo.finance.pubmatic;
+package com.example;
 
-import com.yahoo.finance.pubmatic.response.Quote;
-import com.yahoo.finance.pubmatic.response.Response;
+import com.example.response.Quote;
+import com.example.response.Response;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,11 +9,8 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.concurrent.BlockingQueue;
 
-import static com.yahoo.finance.pubmatic.util.CSVWriter.writeLine;
+import static com.example.util.CSVWriter.writeLine;
 
-/**
- * Created by Nikitash Pawar on 7/7/2017.
- */
 public class Consumer implements Runnable {
     private BlockingQueue<Response> blockingQueue;
     private PrintWriter writer;

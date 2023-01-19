@@ -1,5 +1,5 @@
 
-package com.yahoo.finance.pubmatic.response;
+package com.example.response;
 
 import java.util.HashMap;
 import java.util.Map;

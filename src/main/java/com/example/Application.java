@@ -1,6 +1,6 @@
-package com.yahoo.finance.pubmatic;
+package com.example;
 
-import com.yahoo.finance.pubmatic.response.Response;
+import com.example.response.Response;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,20 +13,17 @@ import java.util.Date;
 import java.util.concurrent.*;
 import java.util.stream.Stream;
 
-import static com.yahoo.finance.pubmatic.util.CSVWriter.writeLine;
-import static java.lang.System.exit;
+import static com.example.util.CSVWriter.writeLine;
 
 @SpringBootApplication
-public class PubmaticApplication implements CommandLineRunner {
+public class Application implements CommandLineRunner {
 
 	private static String inputFileName = "Stocks.txt";
 	private static final String outputFileName = "Output.csv";
 
-
-
     public static void main(String[] args) throws Exception {
 
-        SpringApplication.run(PubmaticApplication.class, args);
+        SpringApplication.run(Application.class, args);
 
     }
 

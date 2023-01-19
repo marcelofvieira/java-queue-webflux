@@ -1,7 +1,7 @@
-package com.yahoo.finance.pubmatic;
+package com.example;
 
+import com.example.response.Response;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.yahoo.finance.pubmatic.response.Response;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,9 +12,6 @@ import java.net.URL;
 
 import java.util.concurrent.BlockingQueue;
 
-/**
- * Created by Nikitash Pawar on 7/7/2017.
- */
 public class Producer implements Runnable {
 
     private BlockingQueue<Response> blockingQueue;

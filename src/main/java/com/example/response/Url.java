@@ -1,5 +1,5 @@
 
-package com.yahoo.finance.pubmatic.response;
+package com.example.response;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,10 +15,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "execution-start-time",
     "execution-stop-time",
     "execution-time",
-    "instructions-used",
-    "table-name"
+    "content"
 })
-public class Javascript {
+public class Url {
 
     @JsonProperty("execution-start-time")
     private String executionStartTime;
@@ -26,10 +25,8 @@ public class Javascript {
     private String executionStopTime;
     @JsonProperty("execution-time")
     private String executionTime;
-    @JsonProperty("instructions-used")
-    private String instructionsUsed;
-    @JsonProperty("table-name")
-    private String tableName;
+    @JsonProperty("content")
+    private String content;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -63,24 +60,14 @@ public class Javascript {
         this.executionTime = executionTime;
     }
 
-    @JsonProperty("instructions-used")
-    public String getInstructionsUsed() {
-        return instructionsUsed;
+    @JsonProperty("content")
+    public String getContent() {
+        return content;
     }
 
-    @JsonProperty("instructions-used")
-    public void setInstructionsUsed(String instructionsUsed) {
-        this.instructionsUsed = instructionsUsed;
-    }
-
-    @JsonProperty("table-name")
-    public String getTableName() {
-        return tableName;
-    }
-
-    @JsonProperty("table-name")
-    public void setTableName(String tableName) {
-        this.tableName = tableName;
+    @JsonProperty("content")
+    public void setContent(String content) {
+        this.content = content;
     }
 
     @JsonAnyGetter

@@ -1,5 +1,5 @@
 
-package com.yahoo.finance.pubmatic.response;
+package com.example.response;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,23 +12,23 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "quote"
+    "query"
 })
-public class Results {
+public class Response {
 
-    @JsonProperty("quote")
-    private Quote quote;
+    @JsonProperty("query")
+    private Query query;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("quote")
-    public Quote getQuote() {
-        return quote;
+    @JsonProperty("query")
+    public Query getQuery() {
+        return query;
     }
 
-    @JsonProperty("quote")
-    public void setQuote(Quote quote) {
-        this.quote = quote;
+    @JsonProperty("query")
+    public void setQuery(Query query) {
+        this.query = query;
     }
 
     @JsonAnyGetter

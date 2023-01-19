@@ -1,5 +1,5 @@
 
-package com.yahoo.finance.pubmatic.response;
+package com.example.response;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,11 +15,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "execution-start-time",
     "execution-stop-time",
     "execution-time",
-    "method",
-    "type",
-    "content"
+    "instructions-used",
+    "table-name"
 })
-public class Cache {
+public class Javascript {
 
     @JsonProperty("execution-start-time")
     private String executionStartTime;
@@ -27,12 +26,10 @@ public class Cache {
     private String executionStopTime;
     @JsonProperty("execution-time")
     private String executionTime;
-    @JsonProperty("method")
-    private String method;
-    @JsonProperty("type")
-    private String type;
-    @JsonProperty("content")
-    private String content;
+    @JsonProperty("instructions-used")
+    private String instructionsUsed;
+    @JsonProperty("table-name")
+    private String tableName;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -66,34 +63,24 @@ public class Cache {
         this.executionTime = executionTime;
     }
 
-    @JsonProperty("method")
-    public String getMethod() {
-        return method;
+    @JsonProperty("instructions-used")
+    public String getInstructionsUsed() {
+        return instructionsUsed;
     }
 
-    @JsonProperty("method")
-    public void setMethod(String method) {
-        this.method = method;
+    @JsonProperty("instructions-used")
+    public void setInstructionsUsed(String instructionsUsed) {
+        this.instructionsUsed = instructionsUsed;
     }
 
-    @JsonProperty("type")
-    public String getType() {
-        return type;
+    @JsonProperty("table-name")
+    public String getTableName() {
+        return tableName;
     }
 
-    @JsonProperty("type")
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    @JsonProperty("content")
-    public String getContent() {
-        return content;
-    }
-
-    @JsonProperty("content")
-    public void setContent(String content) {
-        this.content = content;
+    @JsonProperty("table-name")
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
     }
 
     @JsonAnyGetter
