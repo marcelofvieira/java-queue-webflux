@@ -1,22 +1,10 @@
 package com.example;
 
-import com.example.response.Response;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.concurrent.*;
-import java.util.stream.Stream;
-
-import static com.example.util.CSVWriter.writeLine;
+import org.springframework.boot.SpringApplication;
 
 @SpringBootApplication
-public class Application implements CommandLineRunner {
+public class Application {
 
 	private static String inputFileName = "Stocks.txt";
 	private static final String outputFileName = "Output.csv";
@@ -27,6 +15,7 @@ public class Application implements CommandLineRunner {
 
     }
 
+    /*
     //access command line arguments
     @Override
     public void run(String... args) throws Exception {
@@ -84,5 +73,5 @@ public class Application implements CommandLineRunner {
 
         //exit(0);
     }
-
+    */
 }
