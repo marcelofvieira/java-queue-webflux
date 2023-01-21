@@ -22,13 +22,13 @@ public class MockDebitRepository {
         Debit.builder().id(1L).debitDate(LocalDate.now().plusDays(5L)).debitValue(ThreadLocalRandom.current().nextDouble(1.00, 1000.00)).build());
 
     DEBIT_DATA.put(2L,
-        Debit.builder().id(2L).debitDate(LocalDate.now().plusDays(5L)).debitValue(ThreadLocalRandom.current().nextDouble(1.00, 1000.00)).build());
+        Debit.builder().id(2L).debitDate(LocalDate.now().plusDays(3L)).debitValue(ThreadLocalRandom.current().nextDouble(1.00, 1000.00)).build());
 
     DEBIT_DATA.put(3L,
-        Debit.builder().id(3L).debitDate(LocalDate.now().plusDays(5L)).debitValue(ThreadLocalRandom.current().nextDouble(1.00, 1000.00)).build());
+        Debit.builder().id(3L).debitDate(LocalDate.now().plusDays(1L)).debitValue(ThreadLocalRandom.current().nextDouble(1.00, 1000.00)).build());
 
     DEBIT_DATA.put(4L,
-        Debit.builder().id(4L).debitDate(LocalDate.now().plusDays(5L)).debitValue(ThreadLocalRandom.current().nextDouble(1.00, 1000.00)).build());
+        Debit.builder().id(4L).debitDate(LocalDate.now().plusDays(30L)).debitValue(ThreadLocalRandom.current().nextDouble(1.00, 1000.00)).build());
   }
 
     public Mono<Debit> findById(Long id) {
