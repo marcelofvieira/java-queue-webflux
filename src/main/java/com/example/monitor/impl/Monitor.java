@@ -5,7 +5,6 @@ import com.example.domain.Debit;
 import com.example.monitor.MonitorInterface;
 import com.example.workers.processor.AbstractProcessor;
 import com.example.workers.reader.AbstractReader;
-
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Monitor implements MonitorInterface {

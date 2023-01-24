@@ -3,9 +3,8 @@ package com.example.workers.processor.impl;
 import com.example.domain.Debit;
 import com.example.workers.processor.AbstractProcessor;
 import com.example.workers.processor.ProcessorInterface;
-import org.springframework.stereotype.Service;
-
 import java.util.concurrent.ConcurrentLinkedQueue;
+import org.springframework.stereotype.Service;
 
 @Service
 public class Processor02 extends AbstractProcessor {

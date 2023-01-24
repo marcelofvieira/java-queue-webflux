@@ -4,10 +4,9 @@ import com.example.ScopedSingleton;
 import com.example.domain.Debit;
 import com.example.workers.processor.AbstractProcessor;
 import com.example.workers.processor.ProcessorInterface;
-import org.springframework.stereotype.Service;
-
 import java.util.Objects;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import org.springframework.stereotype.Service;
 
 @Service
 public class Processor01 extends AbstractProcessor {

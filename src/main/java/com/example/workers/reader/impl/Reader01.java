@@ -4,10 +4,9 @@ import com.example.ScopedSingleton;
 import com.example.repository.MockDebitRepository;
 import com.example.workers.reader.AbstractReader;
 import com.example.workers.reader.ReaderInterface;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 @Service
 public class Reader01 extends AbstractReader {

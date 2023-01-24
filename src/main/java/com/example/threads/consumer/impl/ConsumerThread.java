@@ -2,14 +2,10 @@ package com.example.threads.consumer.impl;
 
 import com.example.ScopedSingleton;
 import com.example.domain.Debit;
-import com.example.repository.MockDebitRepository;
 import com.example.threads.consumer.ConsumerThreadInterface;
 import com.example.workers.consumer.ConsumerWorkerInterface;
-import com.example.workers.reader.ReaderInterface;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.concurrent.ConcurrentLinkedQueue;
+import org.springframework.stereotype.Service;
 
 @Service
 public class ConsumerThread implements ConsumerThreadInterface<ConsumerWorkerInterface> {

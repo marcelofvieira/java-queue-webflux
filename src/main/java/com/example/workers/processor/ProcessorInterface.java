@@ -1,7 +1,6 @@
 package com.example.workers.processor;
 
 import com.example.domain.Debit;
-
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public interface ProcessorInterface {

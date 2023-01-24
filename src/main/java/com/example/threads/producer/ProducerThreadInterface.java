@@ -1,7 +1,6 @@
 package com.example.threads.producer;
 
 import com.example.domain.Debit;
-
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public interface ProducerThreadInterface<P> {
