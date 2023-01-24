@@ -2,6 +2,8 @@ package com.example.monitor;
 
 public interface MonitorInterface<A> {
 
-    void execute(String configName);
+    void setMonitorName(String name);
+
+    void start(String configName);
 
 }

@@ -1,10 +1,12 @@
 package com.example.threads.producer;
 
-import com.example.domain.Debit;
+import com.example.domain.MessageWrapper;
+import com.example.domain.ProducerResponse;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.Future;
 
 public interface ProducerThreadInterface<P> {
 
-    void executeConsumer(String scope, ConcurrentLinkedQueue<Debit> queue, P producer);
+    Future<ProducerResponse> startThread(String contextId, ConcurrentLinkedQueue<MessageWrapper> queue, P producer);
 
 }

@@ -25,7 +25,7 @@ public class MonitorController {
 
         MonitorInterface monitor = monitorFactory.get(MonitorEnum.getByName(monitorName));
 
-        monitor.execute(monitorConfig);
+        monitor.start(monitorConfig);
 
         return Mono.just("Finished");
     };
