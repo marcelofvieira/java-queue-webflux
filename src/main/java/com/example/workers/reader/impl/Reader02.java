@@ -1,7 +1,7 @@
-package com.example.worker.reader.impl;
+package com.example.workers.reader.impl;
 
-import com.example.worker.reader.AbstractReader;
-import com.example.worker.reader.ReaderInterface;
+import com.example.workers.reader.AbstractReader;
+import com.example.workers.reader.ReaderInterface;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.ConcurrentLinkedQueue;

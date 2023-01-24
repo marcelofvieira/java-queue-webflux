@@ -1,9 +1,9 @@
-package com.example.worker.reader.impl;
+package com.example.workers.reader.impl;
 
 import com.example.ScopedSingleton;
 import com.example.repository.MockDebitRepository;
-import com.example.worker.reader.AbstractReader;
-import com.example.worker.reader.ReaderInterface;
+import com.example.workers.reader.AbstractReader;
+import com.example.workers.reader.ReaderInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -3,8 +3,8 @@ package com.example.monitor.impl;
 import com.example.ScopedSingleton;
 import com.example.domain.Debit;
 import com.example.monitor.MonitorInterface;
-import com.example.worker.processor.AbstractProcessor;
-import com.example.worker.reader.AbstractReader;
+import com.example.workers.processor.AbstractProcessor;
+import com.example.workers.reader.AbstractReader;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 

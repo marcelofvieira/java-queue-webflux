@@ -1,4 +1,4 @@
-package com.example.worker.reader;
+package com.example.workers.reader;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 

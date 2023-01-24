@@ -1,4 +1,4 @@
-package com.example.worker.processor;
+package com.example.workers.processor;
 
 public abstract class AbstractProcessor implements ProcessorInterface {
 

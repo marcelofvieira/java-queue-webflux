@@ -1,10 +1,10 @@
 package com.example.config;
 
 import com.example.monitor.impl.Monitor;
-import com.example.worker.processor.impl.Processor01;
-import com.example.worker.processor.impl.Processor02;
-import com.example.worker.reader.impl.Reader01;
-import com.example.worker.reader.impl.Reader02;
+import com.example.workers.processor.impl.Processor01;
+import com.example.workers.processor.impl.Processor02;
+import com.example.workers.reader.impl.Reader01;
+import com.example.workers.reader.impl.Reader02;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;

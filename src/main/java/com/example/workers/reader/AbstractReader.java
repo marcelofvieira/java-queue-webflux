@@ -1,4 +1,4 @@
-package com.example.worker.reader;
+package com.example.workers.reader;
 
 public abstract class AbstractReader implements ReaderInterface {
 
