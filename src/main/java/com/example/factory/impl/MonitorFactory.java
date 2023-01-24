@@ -4,10 +4,6 @@ import com.example.enums.MonitorEnum;
 import com.example.factory.MonitorFactoryInterface;
 import com.example.monitor.MonitorInterface;
 import com.example.monitor.impl.Monitor;
-import com.example.worker.processor.impl.Processor01;
-import com.example.worker.processor.impl.Processor02;
-import com.example.worker.reader.impl.Reader01;
-import com.example.worker.reader.impl.Reader02;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 

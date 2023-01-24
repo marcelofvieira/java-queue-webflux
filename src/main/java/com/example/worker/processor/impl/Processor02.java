@@ -6,7 +6,6 @@ import com.example.worker.processor.ProcessorInterface;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.LinkedTransferQueue;
 
 @Service
 public class Processor02 extends AbstractProcessor {

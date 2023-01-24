@@ -3,7 +3,6 @@ package com.example.worker.processor;
 import com.example.domain.Debit;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.LinkedTransferQueue;
 
 public interface ProcessorInterface {
 
