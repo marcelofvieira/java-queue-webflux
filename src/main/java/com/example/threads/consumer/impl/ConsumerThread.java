@@ -7,7 +7,6 @@ import com.example.domain.MessageWrapper;
 import com.example.threads.consumer.ConsumerThreadInterface;
 import com.example.workers.consumer.ConsumerInterface;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
