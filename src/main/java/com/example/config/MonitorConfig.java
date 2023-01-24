@@ -6,6 +6,7 @@ import com.example.worker.processor.impl.Processor02;
 import com.example.worker.reader.impl.Reader01;
 import com.example.worker.reader.impl.Reader02;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -19,13 +20,15 @@ public class MonitorConfig {
     private Processor01 processor01;
 
     @Bean
-    public Monitor<Reader01, Processor01> configureMonitor01(){
-        return new Monitor<Reader01, Processor01>(reader01, processor01);
+    @Qualifier("q1")
+    public Monitor configureMonitor01(){
+        return new Monitor(reader01, processor01);
     }
 
     @Bean
-    public Monitor<Reader02, Processor02> configureMonitor02(){
-        return new Monitor<Reader02, Processor02>(new Reader02(), new Processor02());
+    @Qualifier("q2")
+    public Monitor configureMonitor02(){
+        return new Monitor(new Reader02(), new Processor02());
     }
 
 }

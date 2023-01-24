@@ -8,16 +8,17 @@ import com.example.worker.processor.impl.Processor01;
 import com.example.worker.processor.impl.Processor02;
 import com.example.worker.reader.impl.Reader01;
 import com.example.worker.reader.impl.Reader02;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
 public class MonitorFactory implements MonitorFactoryInterface {
 
-    private final Monitor<Reader01, Processor01> monitor1;
-    private final Monitor<Reader02, Processor02> monitor2;
+    private final Monitor monitor1;
+    private final Monitor monitor2;
 
-    public MonitorFactory(Monitor<Reader01, Processor01> monitor1,
-                          Monitor<Reader02, Processor02> monitor2) {
+    public MonitorFactory(@Qualifier("q1") Monitor monitor1,
+                          @Qualifier("q2") Monitor monitor2) {
         this.monitor1 = monitor1;
         this.monitor2 = monitor2;
     }

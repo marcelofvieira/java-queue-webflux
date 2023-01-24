@@ -8,12 +8,12 @@ import com.example.worker.reader.AbstractReader;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-public class Monitor<A extends AbstractReader, B extends AbstractProcessor> implements MonitorInterface {
+public class Monitor implements MonitorInterface {
 
     private final AbstractReader abstractReader;
     private final AbstractProcessor abstractProcessor;
 
-    public Monitor(A abstractReader, B abstractProcessor) {
+    public Monitor(AbstractReader abstractReader, AbstractProcessor abstractProcessor) {
         this.abstractReader = abstractReader;
         this.abstractProcessor = abstractProcessor;
     }
