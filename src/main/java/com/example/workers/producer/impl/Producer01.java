@@ -31,12 +31,12 @@ public class Producer01 implements ProducerInterface {
 
     repository.findListAllDebits().forEach(i -> {
 
-      System.out.println("Producer: " + i.toString());
+      System.out.println(wrapper.getContexId() + " Producer: " + i.toString());
 
       wrapper.getQueue().add(MessageWrapper.builder().data(i).build());
 
       try {
-        Thread.sleep(100);
+        Thread.sleep(50);
       } catch (InterruptedException e) {
       }
     });

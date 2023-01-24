@@ -14,6 +14,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ConsumerWrapper {
 
+  private String name;
+
   private String contexId;
 
   private ConcurrentLinkedQueue<MessageWrapper> queue;

@@ -7,11 +7,15 @@ import com.example.threads.consumer.ConsumerThreadInterface;
 import com.example.threads.producer.ProducerThreadInterface;
 import com.example.workers.consumer.ConsumerInterface;
 import com.example.workers.producer.ProducerInterface;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Future;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.expression.spel.ast.FunctionReference;
 import org.springframework.stereotype.Service;
+import org.springframework.util.concurrent.ListenableFuture;
 
 @Service
 public class MonitorT implements MonitorInterface {
@@ -52,11 +56,16 @@ public class MonitorT implements MonitorInterface {
         Future futureP = producerThread.startThread(contextId, queue, this.producer);
 
         //Starting consumer = return future
-        consumerThread.startThread(contextId, queue, this.consumer);
+        List<Future> futureC = consumerThread.startThread(contextId, queue, this.consumer);
 
         try {
 
-            futureP.get();
+            System.out.println(contextId + "++++++++++++++++++++++++++++++");
+
+            while(allProcessIsDone(futureP, futureC)){
+                Thread.sleep(500);
+                System.out.println(contextId + " Checking threads is done...");
+            }
 
         } catch (Exception e) {
             System.out.println(e);
@@ -74,6 +83,14 @@ public class MonitorT implements MonitorInterface {
 
     private String getNewContextId() {
         return UUID.randomUUID().toString();
+    }
+
+    private boolean allProcessIsDone(Future futureProducer, List<Future> listFutureConsumer) {
+
+        return !futureProducer.isDone() &&
+               !(listFutureConsumer.stream()
+               .filter(i -> !i.isDone()).collect(Collectors.toList()).size() == 0);
+
     }
 
 }

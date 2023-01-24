@@ -33,13 +33,13 @@ public class Consumer01 implements ConsumerInterface {
 
         if (Objects.isNull(message)) {
 
-          System.out.println("Waiting");
+          System.out.println(wrapper.getContexId() + " " + wrapper.getName() + " Waiting");
           Thread.sleep(500L);
 
           continue;
         }
 
-        System.out.println("Consumer: " + message.getData().toString());
+        System.out.println(wrapper.getContexId() + " " + wrapper.getName() + " Consumer: " + message.getData().toString());
 
         Thread.sleep(200L);
 
