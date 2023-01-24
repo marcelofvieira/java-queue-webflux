@@ -7,6 +7,7 @@ import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -15,10 +16,12 @@ public class MockDebitRepository {
 
   private static final Map<Long, Debit> DEBIT_DATA;
 
+  private static final int DATA_SIZE = 100;
+
   static {
     DEBIT_DATA = new HashMap<>();
 
-    for (long i = 1; i < 1000; i++) {
+    for (long i = 1; i < DATA_SIZE + 1; i++) {
       DEBIT_DATA.put(i, Debit.builder().id(i).debitDate(LocalDate.now().plusDays(5L)).debitValue(ThreadLocalRandom.current().nextDouble(1.00, 1000.00)).build());
     }
 
@@ -31,6 +34,11 @@ public class MockDebitRepository {
     public Flux<Debit> findAllDebits() {
       return Flux.fromIterable(DEBIT_DATA.values());
     }
+
+    public List<Debit> findListAllDebits() {
+      return DEBIT_DATA.values().stream().toList();
+    }
+
 
     public Mono<Debit> updateDebit(Debit Debit) {
 

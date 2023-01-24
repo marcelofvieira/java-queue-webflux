@@ -7,6 +7,7 @@ import java.time.LocalDate;
 @Builder
 @Setter
 @Getter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class Debit {

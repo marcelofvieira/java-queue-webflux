@@ -9,11 +9,6 @@ public abstract class AbstractProcessor implements ProcessorInterface {
     }
 
     @Override
-    public void executeProcessor(String s) {
-        System.out.println("Abstract: " + s);
-    }
-
-    @Override
     public void setProcessorName(String name) {
         this.processorName = name;
     }

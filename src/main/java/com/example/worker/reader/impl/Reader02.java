@@ -4,6 +4,9 @@ import com.example.worker.reader.AbstractReader;
 import com.example.worker.reader.ReaderInterface;
 import org.springframework.stereotype.Service;
 
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.LinkedTransferQueue;
+
 @Service
 public class Reader02 extends AbstractReader {
 
@@ -12,8 +15,8 @@ public class Reader02 extends AbstractReader {
     }
 
     @Override
-    public void executeReader(String s) {
-        System.out.println("Reader " + getReaderName() + ": " + s);
+    public void executeReader(String scope, ConcurrentLinkedQueue queue) {
+        System.out.println("Reader " + getReaderName());
     }
 
     @Override

@@ -1,8 +1,12 @@
 package com.example.worker.processor.impl;
 
+import com.example.domain.Debit;
 import com.example.worker.processor.AbstractProcessor;
 import com.example.worker.processor.ProcessorInterface;
 import org.springframework.stereotype.Service;
+
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.LinkedTransferQueue;
 
 @Service
 public class Processor02 extends AbstractProcessor {
@@ -17,9 +21,12 @@ public class Processor02 extends AbstractProcessor {
     }
 
     @Override
-    public void executeProcessor(String s) {
+    public void executeProcessor(String scope, ConcurrentLinkedQueue<Debit> queue) {
 
-        System.out.println("Processor " + getProcessorName() + ": " + s);
+        System.out.println("Processor " + getProcessorName());
+
+
+
     }
 
 }

@@ -1,5 +1,10 @@
 package com.example.worker.processor;
 
+import com.example.domain.Debit;
+
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.LinkedTransferQueue;
+
 public interface ProcessorInterface {
 
     ProcessorInterface getNewInstance();
@@ -8,6 +13,6 @@ public interface ProcessorInterface {
 
     String getProcessorName();
 
-    void executeProcessor(String s);
+    void executeProcessor(String scope, ConcurrentLinkedQueue<Debit> queue);
 
 }
