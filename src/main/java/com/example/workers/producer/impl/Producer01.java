@@ -36,6 +36,7 @@ public class Producer01 implements ProducerInterface {
       wrapper.getQueue().add(MessageWrapper.builder().data(i).build());
 
       try {
+        //TODO: Producer time
         Thread.sleep(50);
       } catch (InterruptedException e) {
       }
