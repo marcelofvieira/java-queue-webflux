@@ -4,20 +4,19 @@ import com.example.ScopedSingleton;
 import com.example.domain.MessageWrapper;
 import com.example.domain.ProducerResponse;
 import com.example.domain.ProducerWrapper;
+import com.example.repository.MockAdhesionRepository;
 import com.example.repository.MockDebitRepository;
 import com.example.workers.producer.ProducerInterface;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-@Primary
 @Service
-public class Producer01 implements ProducerInterface {
+public class Producer02 implements ProducerInterface {
 
-  private static final  String PROCESS_NAME = "Producer 01";
+  private static final  String PROCESS_NAME = "Producer 02";
 
   @Autowired
-  private MockDebitRepository repository;
+  private MockAdhesionRepository repository;
 
   @Override
   public String getProcessName() {
@@ -31,7 +30,7 @@ public class Producer01 implements ProducerInterface {
 
     ScopedSingleton control = ScopedSingleton.getInstance(wrapper.getContexId());
 
-    repository.findListAllDebits().forEach(i -> {
+    repository.findListAllAdhesions().forEach(i -> {
 
       System.out.println(wrapper.getContexId() + " " + this.getProcessName() + ": Create new message [" + i.toString() + "]" );
 

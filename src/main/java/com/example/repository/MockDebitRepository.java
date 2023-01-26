@@ -13,18 +13,18 @@ import reactor.core.publisher.Mono;
 @Repository
 public class MockDebitRepository {
 
-  private static final Map<Long, Debit> DEBIT_DATA;
+    private static final Map<Long, Debit> DEBIT_DATA;
 
-  private static final int DATA_SIZE = 300;
+    private static final int DATA_SIZE = 300;
 
-  static {
-    DEBIT_DATA = new HashMap<>();
+    static {
+      DEBIT_DATA = new HashMap<>();
 
-    for (long i = 1; i < DATA_SIZE + 1; i++) {
-      DEBIT_DATA.put(i, Debit.builder().id(i).debitDate(LocalDate.now().plusDays(5L)).debitValue(ThreadLocalRandom.current().nextDouble(1.00, 1000.00)).build());
+      for (long i = 1; i < DATA_SIZE + 1; i++) {
+        DEBIT_DATA.put(i, Debit.builder().id(i).debitDate(LocalDate.now().plusDays(5L)).debitValue(ThreadLocalRandom.current().nextDouble(1.00, 1000.00)).build());
+      }
+
     }
-
-  }
 
     public Mono<Debit> findById(Long id) {
       return Mono.just(DEBIT_DATA.get(id));

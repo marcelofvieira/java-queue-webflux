@@ -6,14 +6,12 @@ import com.example.domain.ConsumerWrapper;
 import com.example.domain.MessageWrapper;
 import com.example.workers.consumer.ConsumerInterface;
 import java.util.Objects;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-@Primary
 @Service
-public class Consumer01 implements ConsumerInterface {
+public class Consumer02 implements ConsumerInterface {
 
-    private static final  String PROCESS_NAME = "Consumer Process 01";
+    private static final  String PROCESS_NAME = "Consumer Process 02";
 
   @Override
   public String getProcessName() {
@@ -44,17 +42,14 @@ public class Consumer01 implements ConsumerInterface {
         System.out.println(wrapper.getContexId() + " " + wrapper.getName() + ": New message");
         System.out.println(wrapper.getContexId() + " " + wrapper.getName() + ": " + message.getData().toString());
 
-        System.out.println(wrapper.getContexId() + " " + wrapper.getName() + ": Sub process A");
-        Thread.sleep(100L);
+        System.out.println(wrapper.getContexId() + " " + wrapper.getName() + ": Sub process X");
+        Thread.sleep(200L);
 
-        System.out.println(wrapper.getContexId() + " " + wrapper.getName() + ": Sub process B");
-        Thread.sleep(100L);
+        System.out.println(wrapper.getContexId() + " " + wrapper.getName() + ": Sub process Y");
+        Thread.sleep(200L);
 
-        System.out.println(wrapper.getContexId() + " " + wrapper.getName() + ": Sub process C");
-        Thread.sleep(100L);
-
-        System.out.println(wrapper.getContexId() + " " + wrapper.getName() + ": Sub process D");
-        Thread.sleep(100L);
+        System.out.println(wrapper.getContexId() + " " + wrapper.getName() + ": Sub process Z");
+        Thread.sleep(200L);
 
         System.out.println(wrapper.getContexId() + " " + wrapper.getName() + ": Completed");
 
