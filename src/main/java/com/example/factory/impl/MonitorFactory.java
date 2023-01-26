@@ -3,16 +3,16 @@ package com.example.factory.impl;
 import com.example.enums.MonitorEnum;
 import com.example.factory.MonitorFactoryInterface;
 import com.example.monitor.MonitorInterface;
-import com.example.monitor.impl.MonitorT;
+import com.example.monitor.impl.Monitor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
 public class MonitorFactory implements MonitorFactoryInterface {
 
-    private final MonitorT monitor1;
+    private final Monitor monitor1;
 
-    public MonitorFactory(@Qualifier("monitor01") MonitorT monitor1) {
+    public MonitorFactory(@Qualifier("monitor01") Monitor monitor1) {
         this.monitor1 = monitor1;
     }
 

@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MonitorT implements MonitorInterface {
+public class Monitor implements MonitorInterface {
 
     private String monitorName;
     private final ProducerInterface producer;
@@ -29,7 +29,7 @@ public class MonitorT implements MonitorInterface {
     private ConsumerThreadInterface consumerThread;
 
     @Autowired
-    public MonitorT(ProducerInterface producer, ConsumerInterface consumer) {
+    public Monitor(ProducerInterface producer, ConsumerInterface consumer) {
         this.producer = producer;
         this.consumer = consumer;
     }

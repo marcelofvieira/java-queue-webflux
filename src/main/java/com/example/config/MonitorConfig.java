@@ -1,6 +1,6 @@
 package com.example.config;
 
-import com.example.monitor.impl.MonitorT;
+import com.example.monitor.impl.Monitor;
 import com.example.workers.consumer.impl.Consumer01;
 import com.example.workers.producer.impl.Producer01;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +17,8 @@ public class MonitorConfig {
 
     @Bean
     @Qualifier("monitor01")
-    public MonitorT configureMonitor01V2(){
-        return new MonitorT(this.producer01, this.consumer01);
+    public Monitor configureMonitor01V2(){
+        return new Monitor(this.producer01, this.consumer01);
     }
 
 }
