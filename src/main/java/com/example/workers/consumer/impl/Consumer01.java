@@ -64,7 +64,7 @@ public class Consumer01 implements ConsumerInterface {
 
     }
 
-    System.out.println(wrapper.getContexId() + " " + wrapper.getName() + " Completed!");
+    System.out.println(wrapper.getContexId() + " " + wrapper.getName() + " Finished!");
 
     return ConsumerResponse.builder().completed(true).build();
   }

@@ -1,9 +1,11 @@
 package com.example.factory.impl;
 
 import com.example.enums.MonitorEnum;
+import com.example.exceptions.InvalidMonitorException;
 import com.example.factory.MonitorFactoryInterface;
 import com.example.monitor.MonitorInterface;
 import com.example.monitor.impl.Monitor;
+import java.util.Objects;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,10 @@ public class MonitorFactory implements MonitorFactoryInterface {
     @Override
     public MonitorInterface get(MonitorEnum monitor) {
 
+        if (Objects.isNull(monitor)) {
+            throw new InvalidMonitorException("Invalid monitor name");
+        }
+
         switch (monitor) {
             case MONITOR01:
                 this.monitor1.setMonitorName(monitor.getValue());
@@ -33,10 +39,7 @@ public class MonitorFactory implements MonitorFactoryInterface {
 
             default:
                 return null;
-
         }
-
-
 
     };
 
