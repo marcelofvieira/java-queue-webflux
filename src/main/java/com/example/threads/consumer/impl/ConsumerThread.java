@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ConsumerThread implements ConsumerThreadInterface<ConsumerInterface> {
 
-    private static final int POOL_SIZE = 3;
+    private static final int POOL_SIZE = 10;
 
     @Override
     public List<Future<ConsumerResponse>> startThread(String contextId, ConcurrentLinkedQueue<MessageWrapper> queue,

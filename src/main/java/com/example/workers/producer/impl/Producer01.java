@@ -40,7 +40,10 @@ public class Producer01 implements ProducerInterface {
         Thread.sleep(50);
       } catch (InterruptedException e) {
       }
+
     });
+
+    System.out.println(wrapper.getContexId() + " Producer was completed");
 
     control.setCompleted(true);
 

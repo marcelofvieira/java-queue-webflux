@@ -58,9 +58,7 @@ public class MonitorT implements MonitorInterface {
 
         try {
 
-            System.out.println(contextId + "++++++++++++++++++++++++++++++");
-
-            while(allProcessIsDone(futureP, futureC)){
+            while(!allProcessIsDone(futureP, futureC)){
                 Thread.sleep(500);
                 System.out.println(contextId + " Checking threads is done...");
             }
@@ -85,10 +83,15 @@ public class MonitorT implements MonitorInterface {
 
     private boolean allProcessIsDone(Future futureProducer, List<Future> listFutureConsumer) {
 
-        return !futureProducer.isDone() &&
-               !(listFutureConsumer.stream()
-               .filter(i -> !i.isDone()).collect(Collectors.toList()).size() == 0);
+        if (!futureProducer.isDone()) {
+            return false;
+        }
 
+        if (listFutureConsumer.stream().filter(i -> !i.isDone()).collect(Collectors.toList()).size() > 0) {
+            return false;
+        }
+
+        return true;
     }
 
 }

@@ -15,7 +15,7 @@ public class MockDebitRepository {
 
   private static final Map<Long, Debit> DEBIT_DATA;
 
-  private static final int DATA_SIZE = 100;
+  private static final int DATA_SIZE = 300;
 
   static {
     DEBIT_DATA = new HashMap<>();
