@@ -5,7 +5,6 @@ import com.example.domain.MessageWrapper;
 import com.example.domain.ProducerResponse;
 import com.example.domain.ProducerWrapper;
 import com.example.repository.MockAdhesionRepository;
-import com.example.repository.MockDebitRepository;
 import com.example.workers.producer.ProducerInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
